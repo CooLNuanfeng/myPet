@@ -1,0 +1,27 @@
+#banner.carousel.slide(data-ride="carousel")
+  ol.carousel-indicators
+    li.active(data-target='#banner' data-slide-to="0")
+    li(data-target='#banner' data-slide-to="1")
+    li(data-target='#banner' data-slide-to="2")
+  .carousel-inner(role='listbox')
+    .item.active
+      img(src='http://placehold.it/1200x350' width="100%" alt='')
+      .carousel-caption
+        h3 这是测试文字001
+        p this is a test001
+    .item
+      img(src='http://placehold.it/1200x350' width="100%" alt='')
+      .carousel-caption
+        h3 这是测试文字002
+        p this is a test002
+    .item
+      img(src='http://placehold.it/1200x350' width="100%" alt='')
+      .carousel-caption
+        h3 这是测试文字003
+        p this is a test003
+  a.left.carousel-control(href='#banner' role='button' data-slide='prev')
+    span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+    span.sr-only Previous
+  a.right.carousel-control(href='#banner' role="button" data-slide='next')
+    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+    span.sr-only Next

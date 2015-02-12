@@ -1,0 +1,26 @@
+#login.modal.fade(tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button" data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+        h4.modal-title#loginTitle 登陆
+      .modal-body
+        form.form-horizontal(action='/' method="post")
+          .form-group
+            laber.col-sm-2.control-label(for="username") 用户名
+            .col-sm-10
+              input.form-control#username(type="text" placeholder="用户名" name='username')
+          .form-group
+            laber.col-sm-2.control-label(for="password") 密码
+            .col-sm-10
+              input.form-control#password(type="password" placeholder="密码" name='password')
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              .checkbox
+                label
+                  input(type="checkbox")
+                  记住我
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-success(type="submit") 登陆

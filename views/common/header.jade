@@ -1,0 +1,31 @@
+nav.navbar.navbar-inverse(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#bs-btn1')
+        span.sr-only 
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') 萌宠联盟
+    .collapse.navbar-collapse#bs-btn1
+      ul.nav.navbar-nav
+        li.active
+          a(href='/') 首页
+        li
+          a(href='/dogs') 汪星人
+        li
+          a(href='/cats') 喵星人
+        li.dropdown
+          a.dropdown-toggle(href='javascript:;' data-toggle='dropdown') 其他
+            span.caret
+          ul.dropdown-menu(role='menu')
+            li: a(href='/turtle') 龟类
+            li: a(href='/fists') 鱼类
+            li: a(href='/rodents') 鼠类
+            li.divider
+            li: a(href='/others') 其他
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='javascript:;' data-toggle="modal" data-target="#login") 登陆
+        li
+          a(href='/registered') 注册

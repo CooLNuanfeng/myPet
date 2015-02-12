@@ -1,0 +1,58 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.hotPet{
+	margin: 20px 0;
+}
+.hotPet img{
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+
+.tab-content{
+	height: 260px;
+}
+
+.siderTitel{
+	padding-left: 20px;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 5px;
+}
+.siderTitel a{
+	float: right;
+	font-size: 12px;
+}
+.siderList{
+	height: 256px;
+}
+.siderList li{
+	padding: 8px 0;
+}
+
+footer{
+	height: 100px;
+	background: #333;
+}
+footer .footer{
+	padding-top: 30px;
+}
+footer p{
+	color: #fff;
+}
+
+
+
+.pd20{
+	padding: 20px 0;
+}
+.md30{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
