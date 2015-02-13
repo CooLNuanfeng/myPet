@@ -1,10 +1,60 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var db = mongoose.createConnection('localhost','anmial');
+
+var animalSchema = require('../dataModel/animalModel').animalSchema;
+
+
+db.on('error',console.error.bind(console,'链接错误'));
+
+db.once('open',function(){
+	var animalModel = db.model('Animal',animalSchema);
+
+	var animal = new animalModel({'name':'俄罗斯蓝猫','callName':'咪咪','type':'猫类'});
+
+	//animal.sayName();
+	//animal.save();
+
+	// animalModel.findAnimalName(function(err,animals){
+	// 	//animals 数据集合
+	// 	console.log(animals);
+	// });
+
+	animalModel.findByType('猫类',function(err,types){
+		console.log(types);
+	});
+	animalModel.findAnimalType(function(err,animals){
+		//animals 数据集合
+		console.log(animals);
+	});
+});
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-  	title: '萌宠联盟', 
+  	title: '萌宠联盟',
+  	focusImg : [
+  		{
+  			"src":"/images/banner1.jpg",
+  			"href" : "http://baike.baidu.com/view/28807.htm?fromtitle=%E5%93%88%E5%A3%AB%E5%A5%87&fromid=123197&type=syn",
+  			"title" : "哈士奇",
+  			"text" : "二货萌宠,宠物界的表情帝"
+  		},
+  		{
+  			"src":"/images/banner2.jpg",
+  			"href" : "http://baike.baidu.com/subview/23751/13870555.htm?fromtitle=%E6%8B%89%E5%B8%83%E6%8B%89%E5%A4%9A&fromid=4152961&type=syn",
+  			"title" : "拉布拉多",
+  			"text" : "中大型犬类，个性温和、活泼，智商高，也对人很友善"
+  		},
+  		{
+  			"src":"/images/banner3.jpg",
+  			"href" : "http://baike.baidu.com/subview/34615/34615.htm",
+  			"title" : "俄罗斯蓝猫",
+  			"text" : "俄罗斯蓝猫（Russian Blue），历史上曾被称做阿契安吉蓝猫"
+  		}
+  	],
   	hotDates : [
   		{
   			"name":"哈士奇",
@@ -56,6 +106,11 @@ router.get('/others', function(req, res, next) {
 
 router.get('/registered', function(req, res, next) {
   res.render('registered', { title: '注册页面' });
+});
+
+
+router.get('/use/index', function(req, res, next) {
+  res.render('../admin/adminIndex', { title: '后台录入页' });
 });
 
 

@@ -4,17 +4,30 @@
     li(data-target='#banner' data-slide-to="1")
     li(data-target='#banner' data-slide-to="2")
   .carousel-inner(role='listbox')
-    .item.active
+    for item,i in focusImg
+      if i == "0"
+        .item.active
+          img(src="#{item.src}" width="100%" alt='')
+          .carousel-caption
+            h3= item.title
+            p= item.text
+      else
+        .item
+          img(src="#{item.src}" width="100%" alt='')
+          .carousel-caption
+            h3= item.title
+            p= item.text
+    //-.item.active
       img(src='http://placehold.it/1200x350' width="100%" alt='')
       .carousel-caption
         h3 这是测试文字001
         p this is a test001
-    .item
+    //-.item
       img(src='http://placehold.it/1200x350' width="100%" alt='')
       .carousel-caption
         h3 这是测试文字002
         p this is a test002
-    .item
+    //-.item
       img(src='http://placehold.it/1200x350' width="100%" alt='')
       .carousel-caption
         h3 这是测试文字003
