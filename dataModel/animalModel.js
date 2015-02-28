@@ -6,22 +6,26 @@ var animalSchema = new mongoose.Schema({
 	callName : String,
 	type : String,
 	description : String,
-	href : String,
 	title : String,
-
+	bannerSrc : String,
+	text : String,
+	imgSrc : String,
+	hrefUrl : String
 });
 
-// animalSchema.methods.findAnimalName = function(cb){
-// 	return this.model('Animal').find({name:this.name},cb);
-// };
+// methods 是必须将model实例化出对象才能使用，statics可以直接在Schema对象下使用
 
-animalSchema.statics.findAnimalType = function(cb){
-	//console.log('我是'+ this.type +', 我的学名叫'+ this.name+',人们叫我'+this.callName);
-	return this.find({},cb);
+animalSchema.methods.findByName = function(callName,cb){
+	return this.model('Animal').find({callName:callName}).exec(cb);
 };
 
-animalSchema.statics.findByType = function(type,cb){
-	return this.find({type:type},cb);
+animalSchema.statics.findAnimal = function(cb){
+	//console.log('我是'+ this.type +', 我的学名叫'+ this.name+',人们叫我'+this.callName);
+	return this.find({}).exec(cb);
+};
+
+animalSchema.statics.findByType = function(typeSearch,cb){
+	return this.find({type:typeSearch},cb);
 };
 
 

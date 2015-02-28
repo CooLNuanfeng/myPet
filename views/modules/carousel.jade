@@ -7,15 +7,15 @@
     for item,i in focusImg
       if i == "0"
         .item.active
-          img(src="#{item.src}" width="100%" alt='')
+          img(src="#{item.bannerSrc}" width="100%" alt='')
           .carousel-caption
-            h3= item.title
+            h3= item.name
             p= item.text
       else
         .item
-          img(src="#{item.src}" width="100%" alt='')
+          img(src="#{item.bannerSrc}" width="100%" alt='')
           .carousel-caption
-            h3= item.title
+            h3= item.name
             p= item.text
     //-.item.active
       img(src='http://placehold.it/1200x350' width="100%" alt='')
